@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación XV Años Yanis</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest" />
+    <!-- Fuente elegante tipo carta -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Fondo mágico con partículas -->
+    <canvas id="particles"></canvas>
+    <div class="landscape-blocker">
+      Cargando ⏳<br />
+      ⚠️ Por favor, usa tu teléfono en vertical 📱
+    </div>
+    <!-- Menú Hamburguesa -->
+    <header class="fade-in">
+      <div class="logo">Mis XV Sofia</div>
+      <div id="menu-toggle" class="menu-toggle">&#9776;</div>
+      <nav id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#regresivo">Calendario</a>
+        <a href="#colores">Vestimenta</a>
+        <a href="#evento">Ubicación</a>
+        <a href="#evento">Confirmar</a>
+      </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <section id="inicio" class="hero fade-in">
+      <h1 class="name15">
+        Mis <br />
+        15 Años
+      </h1>
+      <div class="frame">
+        <img
+          src="./assets/img/15anera.png"
+          alt="Quinceañera"
+          class="profile-pic"
+        />
+      </div>
+      <div class="roses-sides">
+        <img src="./assets/img/flower.png" alt="rosas" class="rose-left" />
+        <img src="./assets/img/flower.png" alt="rosas" class="rose-right" />
+      </div>
+
+      <h1 class="name">Sofia <br />Vargas Calle</h1>
+      <audio
+        id="bg-music"
+        src="./assets/musica/music.mp3"
+        autoplay
+        loop
+      ></audio>
+      <div class="music-controls">
+        <button id="play-pause">▶ Reproducir Música</button>
+        <h3 class="h3">Toca el botón ▶ para escuchar mi canción</h3>
+        <img
+          src="./assets/img/mis_15.png"
+          alt="Mis 15 años"
+          class="mis15-img"
+        />
+      </div>
+      <div class="rose-divider">
+        <img src="./assets/img/flower.png" alt="Flor decorativa" />
+      </div>
+    </section>
+    <!-- seccion de dedicatoria -->
+    <section class="dedication-section fade-in">
+      <div class="dedication">
+        <p>
+          Agradezco a mis padres por todo su amor y apoyo incondicional. A mis
+          amigos por hacer de mi vida una aventura inolvidable. Y a todos
+          ustedes por acompañarme en este día tan especial.
+        </p>
+        <h1 class="name">Con el amor de <br />mis padres</h1>
+        <p>
+          Edmundo Vargas Cruz <br />
+          & <br />
+          Maria Calle
+        </p>
+      </div>
+      <div class="rose-divider">
+        <img src="./assets/img/flower.png" alt="Flor decorativa" />
+      </div>
+    </section>
+    <!-- Contador regresivo -->
+    <section id="regresivo" class="countdown-section fade-in">
+      <h2>Reserva esta fecha:</h2>
+      <h1 class="name">18 de Octubre de 2026</h1>
+      <h2>Solo falta</h2>
+      <div id="countdown" class="countdown"></div>
+      <div class="buttons-section">
+        <a
+          class="fancy-button"
+          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fiesta+de+15+años+de+Sofia+Vargas+Calle&dates=20261018T210000Z/20261019T030000Z&details=Te+espero+en+mi+fiesta+de+15!&location=Plaza+23+De+Marzo,+Calama,+Chile"
+          target="_blank"
+        >
+          📅 Agendar a Google Calendar
+        </a>
+        <a class="fancy-button" href="./evento.ics" download="evento.ics">
+          🍏 Agregar a Calendario (iPhone / Outlook)
+        </a>
+      </div>
+      <div class="rose-divider">
+        <img src="./assets/img/flower.png" alt="Flor decorativa" />
+      </div>
+    </section>
+
+    <!-- Colores reservados -->
+    <section id="colores" class="colors-section fade-in">
+      <div class="dress-code">
+        <h3 class="dress-title">Código de vestimenta</h3>
+        <img
+          src="./assets/img/vestimenta.png"
+          alt="Código de vestimenta"
+          class="dress-img"
+        />
+        <p>
+          <strong
+            >Formal<br />
+            .</strong
+          >
+        </p>
+      </div>
+      <h2>Colores reservados para la Quinceañera:</h2>
+      <div class="colors">
+        <div class="color-circle" style="background-color: #4affe4"></div>
+        <div class="color-circle" style="background-color: #27e7ed"></div>
+        <div class="color-circle" style="background-color: #0766cc"></div>
+      </div>
+      <div class="rose-divider">
+        <img src="./assets/img/flower.png" alt="Flor decorativa" />
+      </div>
+    </section>
+
+    <!-- Botones de ubicación, confirmación y vestimenta -->
+    <section id="evento" class="buttons-section fade-in">
+      <div class="map-preview">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7374.225566183414!2d-68.92955892530748!3d-22.462395687925245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96ac09c855772c81%3A0x5bdeb08da5dff19!2sPlaza%2023%20De%20Marzo!5e0!3m2!1ses!2scl!4v1758663498955!5m2!1ses!2scl"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <a
+        class="fancy-button"
+        href="https://maps.app.goo.gl/1CPAUHWszHB6KJhs6"
+        target="_blank"
+        >📍Ver Ubicación</a
+      >
+      <a id="rsvp-button" class="fancy-button" target="_blank"
+        >📩 Confirmar Asistencia</a
+      >
+    </section>
+
+    <!-- Footer -->
+    <footer class="fade-in">
+      <p>
+        <a href="mailto:camachodigitalstudio@gmail.com">
+          camachodigitalstudio@gmail.com
+        </a>
+        |
+        <a href="tel:+56966411859">+56 9 6641 1859</a>
+      </p>
+      <p>
+        © Derechos reservados
+        <a
+          href="https://camachodigitalstudio.github.io/Home_Page/"
+          class="footer-link"
+          >Camacho Digital Studio</a
+        >.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,354 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: #1a0b1e;
+  overflow-x: hidden;
+}
+
+/* ===== Fondo de partículas ===== */
+#particles {
+  position: fixed;
+  inset: 0; /* reemplaza top/left/width/height */
+  max-width: 100vw;
+  max-height: 100vh;
+  background: radial-gradient(circle, #3c004c 0%, #1a0b1e 100%);
+}
+
+/* ===== Animación general ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Menú ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+.logo {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.menu-toggle {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: #f7c1d9;
+  transition: 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    display: none;
+  }
+  header {
+    padding: 1rem 2rem;
+  }
+  nav.active {
+    display: flex;
+  }
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  text-align: center;
+  padding-top: 120px;
+}
+.frame {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid #f7c1d9;
+  box-shadow: 0 0 20px #f7c1d9;
+}
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Rosas a los lados del marco */
+.roses-sides img {
+  position: absolute;
+  width: clamp(80px, 45vw, 100px); /* responsive */
+  animation: pulse 3s infinite;
+  z-index: 5; /* asegurar que queden visibles sobre el fondo */
+}
+
+.rose-left {
+  top: 410px; /* ajusta según necesidad */
+  left: 13%;
+  transform: rotate(-15deg);
+}
+.rose-right {
+  top: 410px;
+  right: 13%;
+  transform: rotate(15deg);
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1.3) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    transform: scale(1.6) rotate(var(--rotate, 0deg));
+  }
+}
+.rose-left {
+  --rotate: -25deg;
+}
+.rose-right {
+  --rotate: 25deg;
+}
+
+/* Nombre con fuente elegante */
+.name {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  animation: slowMove 6s ease-in-out infinite alternate;
+}
+@keyframes slowMove {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Separador de rosas brillantes ===== */
+.rose-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.rose-divider::before,
+.rose-divider::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f7c1d9, transparent);
+  animation: shimmer 5s linear infinite;
+}
+
+.rose-divider::before,
+.rose-divider::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f7c1d9, transparent);
+  background-size: 200% 100%; /* 👈 más grande que el contenedor */
+  animation: shimmer 6s linear infinite;
+}
+
+.rose-divider img {
+  width: 40px;
+  height: 40px;
+  animation: pulse 3s infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ===== Music controls ===== */
+.music-controls button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #f7c1d9;
+  color: #000;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===== Countdown ===== */
+.countdown-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.countdown {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+/* ===== Colors ===== */
+.colors-section {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.colors {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.color-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+/* ===== Buttons ===== */
+.buttons-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+}
+.fancy-button {
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  background: #f7c1d9;
+  color: #000;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px #f7c1d9;
+}
+.fancy-button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  margin-top: 2rem;
+}
+footer a {
+  color: #aaaaaa;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+/* overlay para landscape */
+.landscape-blocker {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #1a0b1e;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  text-align: center;
+  padding: 1rem;
+}
+.map-preview {
+  width: 90%;
+  max-width: 500px;
+  border: 4px solid #f7c1d9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #f7c1d9;
+}
+.dress-code {
+  text-align: center;
+}
+.dress-img {
+  width: 200px;
+  margin-top: -30%;
+  margin-bottom: 0.5rem;
+}
+.dress-code p {
+  font-size: 1.2rem;
+}
+/* Para que el scroll tome en cuenta la altura del header fijo */
+:target {
+  scroll-margin-top: 190px; /* mismo padding-top de tu hero, ajusta según tu header */
+}
+.h3 {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-style: italic;
+  font-family: fantasy;
+  color: #ffffff;
+}
+.dedication {
+  text-align: center;
+  margin-top: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.dedication p {
+  margin: 0.5rem 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.dedication a {
+  color: #f7c1d9;
+  text-decoration: underline;
+}
